@@ -36,6 +36,7 @@ input:
  */
 linea:
     exp '\n'    { printf("= %d\n", $1); }
+  | error '\n'  { yyerrok; printf("Error: sintaxis invalida\n"); }  /* TODO 1 — Regla de recuperación de errores */
   ;
 
 exp:
